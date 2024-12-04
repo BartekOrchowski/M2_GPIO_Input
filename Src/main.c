@@ -15,6 +15,7 @@
 #include "sys_clocks.h"
 #include "led.h"
 #include "software_timers.h"
+#include "button_hw.h"
 
 SoftTimer_t TimerLD2;
 
@@ -25,20 +26,30 @@ int main(void)
 	SystemClockSetup();
 	LED_LD2_Init();
 
-	SoftTimerAction(&TimerLD2, TaskLD2);
-	SoftTimerStart(&TimerLD2, 200);
+//	SoftTimerAction(&TimerLD2, TaskLD2);
+//	SoftTimerStart(&TimerLD2, 200);
+
+	Key_UserB1_Init();
 
     /* Loop forever */
 	while(1)
 	{
-		SoftTimerEvent(&TimerLD2);
+		if(Key_UserB1_IsPressed())
+		{
+			LED_LD2_On();
+		}
+		else
+		{
+			LED_LD2_Off();
+		}
+//		SoftTimerEvent(&TimerLD2);
 	}
 }
 
-void TaskLD2(void)
-{
-	LED_LD2_Toggle();
-}
+//void TaskLD2(void)
+//{
+//	LED_LD2_Toggle();
+//}
 
 
 

@@ -1,0 +1,8 @@
+"./Src/button_hw.o"
+"./Src/led.o"
+"./Src/main.o"
+"./Src/software_timers.o"
+"./Src/sys_clocks.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Startup/startup_stm32g474retx.o"
