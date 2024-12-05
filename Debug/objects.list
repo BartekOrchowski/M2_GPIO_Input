@@ -1,3 +1,4 @@
+"./Src/button.o"
 "./Src/button_hw.o"
 "./Src/led.o"
 "./Src/main.o"
